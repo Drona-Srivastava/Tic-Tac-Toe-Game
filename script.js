@@ -63,10 +63,6 @@ const checkWinner = () => {
                 },700);  // 1 sec delay in showing the result
                 disable();
             }
-            else{
-                msg.innerText = "It is a Draw";
-                msgcont.classList.remove("hide");
-            }
         }
     }
 }

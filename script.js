@@ -3,6 +3,8 @@ let reset = document.querySelector("#reset");
 let newgame = document.querySelector("#newgame");
 let msgcont = document.querySelector(".msg-cont");
 let msg = document.querySelector("#msg")
+let x = document.querySelector(".x2");
+let o = document.querySelector(".o2");
 let turnO = true //playerX, playerO
 let pattern = [
     [0,1,2],
@@ -15,7 +17,22 @@ let pattern = [
     [6,7,8]
 ]
 
+let turnO1 = true;
+
+/* if(turnO1){
+    o.classList.add("turn");
+    x.classList.remove("turn");
+    turnO1=false
+}
+else{
+    x.classList.add("turn");
+    o.classList.remove("turn");
+    turnO1=false
+}
+ */
+o.classList.add("turn");
 boxes.forEach((box)=>{
+    
     box.addEventListener("click",()=>{
         console.log("Box was clicked");
         if(turnO){
@@ -23,12 +40,16 @@ boxes.forEach((box)=>{
             turnO = false;
             box.classList.add("O");
             box.classList.remove("X");
+            x.classList.add("turn");
+            o.classList.remove("turn");
         }
         else{
             box.innerText = "X";
             turnO = true;
             box.classList.add("X");
             box.classList.remove("O");
+            o.classList.add("turn");
+            x.classList.remove("turn");
         }
         box.disabled = true;
         checkWinner();
@@ -71,6 +92,8 @@ const resetgame = () => {
     turnO = true;
     enable();
     msgcont.classList.add("hide");
+    o.classList.add("turn");
+    x.classList.remove("turn");
 }
 
 newgame.addEventListener("click",resetgame);

@@ -119,3 +119,22 @@ h1{
 .turn{
     background-color:#ffff006c;
 }
+
+@media screen and (max-width:1200px){
+    .container{
+        height: 65vh;
+    }
+    .game{
+        height: 60vmin;
+        width: 60vmin;
+    }
+
+    .box{
+        font-size: 55px;
+    }
+
+    .box{
+        height: 15vmin;
+        width: 15vmin;
+    }
+}
